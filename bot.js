@@ -4,8 +4,6 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Client, Intents, MessageAttachment } = require('discord.js');
 const path = require('path');
 const fs = require('fs');
-const dotenv = require('dotenv')
-require('dotenv').config()
 const task = require('./task.js');
 const styles = require('./styles.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
