@@ -3,7 +3,8 @@ const identify = require('./identify.js');
 const download = require('./download.js');
 const mkdirp = require('mkdirp');
 const path = require('path');
-
+const dotenv = require('dotenv')
+require('dotenv').config()
 let paint_rest = new Rest('paint.api.wombo.ai', 100);
 
 module.exports = async function task(prompt, style, update_fn = () => {}, settings = {}) {

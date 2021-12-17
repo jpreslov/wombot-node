@@ -2,18 +2,14 @@ const Rest = require("./rest.js");
 const fs = require("fs");
 const path = require("path");
 
-// const SECRET_PATH = path.join(path.dirname(__filename), "secret.json");
-
 let identify_hostname = "identitytoolkit.googleapis.com";
 let identify_secret_key = null;
 
-// if (fs.existsSync(SECRET_PATH)) {
-    // let secret = process.env;
-    // let secret = JSON.parse(fs.readFileSync(SECRET_PATH, "utf8"));
+const dotenv = require('dotenv')
+require('dotenv').config()
 
-    identify_secret_key = process.env.ID_KEY;
-    if (process.env.identify_hostname) identify_hostname = process.env.identify_hostname;
-// }
+identify_secret_key = process.env.ID_KEY;
+if (process.env.identify_hostname) identify_hostname = process.env.identify_hostname;
 
 let identify_rest = new Rest(identify_hostname);
 

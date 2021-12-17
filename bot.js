@@ -7,6 +7,10 @@ const fs = require('fs');
 const task = require('./task.js');
 const styles = require('./styles.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const dotenv = require('dotenv')
+require('dotenv').config()
+
+console.log(dotenv.config().parsed)
 
 const commands = [
     new SlashCommandBuilder()
